@@ -25,6 +25,7 @@ import {
 } from "@/components/icons";
 
 import { Logo } from "@/components/icons";
+import { SignInButton, UserButton } from "@clerk/nextjs";
 
 export const Navbar = () => {
   const searchInput = (
@@ -82,7 +83,12 @@ export const Navbar = () => {
         <NavbarItem className="hidden sm:flex gap-2">
           <ThemeSwitch />
         </NavbarItem>
-        <NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem>
+        <NavbarItem className="hidden sm:flex gap-2">
+          <UserButton afterSignOutUrl="/"/>
+        </NavbarItem>
+        <NavbarItem className="hidden lg:flex">
+          <SignInButton />
+        </NavbarItem>
         <NavbarItem className="hidden md:flex">
           <Button
             isExternal
